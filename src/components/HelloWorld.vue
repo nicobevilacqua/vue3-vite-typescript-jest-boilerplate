@@ -4,6 +4,8 @@ import { ref } from "vue";
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+
+const isProd = !!import.meta.env.PROD;
 </script>
 
 <template>
@@ -15,6 +17,8 @@ const count = ref(0);
     +
     <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
   </p>
+
+  <p>You're in {{ isProd ? "production" : "development" }}</p>
 
   <p>See <code>README.md</code> for more information.</p>
 
